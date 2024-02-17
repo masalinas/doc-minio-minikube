@@ -33,15 +33,20 @@ $ helm install \
 $ kubectl get all -n minio-operator
 ```
 
+We can get the Minio Management console Token from secret
+
+![Tenant Token](./images/tenant_token.png "Tenant Token")
+
+
 ## Access to minio console
 
-Create a port forward to connect to minio web console manager
+Create a port forward to connect to minio web console manager, to create tenants
 
 ```sh
 $ kubectl port-forward svc/console -n minio-operator 9090:9090
 ```
 
-Connect to minio console web manager and create a tenant
+Connect to minio console web manager and create a tenant. Use the 
 
 ```sh
 http://localhost:9090
@@ -62,19 +67,19 @@ Tenant minimal configuration from Console Web Manager:
 - **Drives per Server (Volumes)**: 4
 - **Total Size**: 10Gb
 
-![Spark UI](./images/tenant_config.png "Tenan Minio")
+![Tenant Minio](./images/tenant_config.png "Tenant Minio")
 
 Tenant State:
 
-![Spark UI](./images/tenant_state.png "Tenan State")
+![Tenant State](./images/tenant_state.png "Tenant State")
 
 Tenant State Resume:
 
-![Spark UI](./images/tenant_resume.png "Tenan State Resume")
+![Tenant State Resume"](./images/tenant_resume.png "Tenant State Resume")
 
 Tenant Metrics:
 
-![Spark UI](./images/tenan_metrics.png "Tenan Metrics")
+![Tenant Metrics](./images/tenan_metrics.png "Tenant Metrics")
 
 ```sh
 $ kubectl port-forward svc/gsdpi-hl 9000:9000
@@ -114,8 +119,8 @@ Pools:
 
 Open Tenant Management console to manage buckets. Click in the Minio Management console button showed in the capture bellow
 
-![Spark UI](./images/tenant_management_console.png "Tenan Management console")
+![Tenant Management console](./images/tenant_management_console.png "Tenant Management console")
 
 List Tenant Buckets
 
-![Spark UI](./images/tenant_buckets.png "Tenan Buckets")
+![Tenant Buckets](./images/tenant_buckets.png "Tenant Buckets")
