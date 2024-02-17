@@ -33,7 +33,7 @@ $ helm install \
 $ kubectl get all -n minio-operator
 ```
 
-We can get the Minio Management console Token from secret
+We can get the Minio Management console Token from **console-sa-secret** in **minio-operator** namespace
 
 ![Tenant Token](./images/tenant_token.png "Tenant Token")
 
