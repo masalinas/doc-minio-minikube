@@ -1,6 +1,19 @@
 # Description
 PoC Minio Object Storage using Minio Operator from minikube
 
+## Start minikube
+
+Start minikube cluster
+```sh
+$ minikube start
+```
+
+Activate Dashboard
+
+```sh
+$ minikube dashboard
+```
+
 ## Install minio from help
 
 Install helm official repository for operator
