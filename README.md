@@ -35,6 +35,13 @@ http://localhost:9090
 ```
 
 ## Create the tenant 
+Create a namespace for the tenant
+
+```sh
+kubectl create namespace gsdpi
+```
+
+## Create the tenant 
 
 Tenant minimal configuration
 ![Spark UI](./images/tenant_config.png "Tenan Minio")
