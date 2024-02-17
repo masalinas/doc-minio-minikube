@@ -99,7 +99,7 @@ Pools:
 
 ## Open Tenant Management Console
 
-Open Tenant Management console to manage buckets
+Open Tenant Management console to manage buckets. Click in the Minio Management console button showed in the capture bellow
 
 ![Spark UI](./images/tenant_management_console.png "Tenan Management console")
 
