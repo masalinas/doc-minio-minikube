@@ -43,16 +43,20 @@ kubectl create namespace gsdpi
 
 ## Create the tenant 
 
-Tenant minimal configuration
+Tenant minimal configuration from Console Web Manager:
+
 ![Spark UI](./images/tenant_config.png "Tenan Minio")
 
-Tenant State
+Tenant State:
+
 ![Spark UI](./images/tenant_state.png "Tenan State")
 
-Tenant Metrics
-![Spark UI](./images/tenant_resume.png "Tenan Metrics")
+Tenant State Resume:
 
-Tenant Metrics
+![Spark UI](./images/tenant_resume.png "Tenan State Resume")
+
+Tenant Metrics:
+
 ![Spark UI](./images/tenan_metrics.png "Tenan Metrics")
 
 ```sh
