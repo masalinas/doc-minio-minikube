@@ -16,13 +16,13 @@ $ minikube dashboard
 
 ## Install minio from help
 
-Install helm official repository for operator
+Install helm official repository to access to Minio Operator Web Console
 
 ```sh
 $ helm repo add minio-operator https://operator.min.io
 ```
 
-Install helm minio operator release in minikube, wait and recover all kubernetes resources created
+Install helm Minio Operator release in minikube, wait and check all kubernetes resources created from release
 
 ```sh
 $ helm install \
@@ -33,26 +33,27 @@ $ helm install \
 $ kubectl get all -n minio-operator
 ```
 
-We can get the Minio Management console Token from **console-sa-secret** in **minio-operator** namespace
+We can get the Minio Management console Token from **console-sa-secret** secret located in **minio-operator** namespace
 
 ![Tenant Token](./images/tenant_token.png "Tenant Token")
 
 
-## Access to minio console
+## Access to Minio Console Web UI
 
-Create a port forward to connect to minio web console manager, to create tenants
+Create a port forward to connect to Minio Operator Web Console, to create tenants
 
 ```sh
 $ kubectl port-forward svc/console -n minio-operator 9090:9090
 ```
 
-Connect to minio console web manager and create a tenant. Use the 
+Connect to Minio Console Web Console and create a tenant. Use this uri: 
 
 ```sh
 http://localhost:9090
 ```
 
-## Create the tenant 
+## Create a namesapce for the tenant 
+
 Create a namespace for the tenant
 
 ```sh
@@ -61,13 +62,13 @@ kubectl create namespace gsdpi
 
 ## Create the tenant 
 
-Tenant minimal configuration from Console Web Manager:
+Tenant called **gsdpi** with the minimal configuration from Minio Console Web Console:
 
 - **Number of Servers**: 1
 - **Drives per Server (Volumes)**: 4
-- **Total Size**: 10Gb
+- **Total Size (Sixe per drive)**: 10Gb
 
-![Tenant Minio](./images/tenant_config.png "Tenant Minio")
+![Tenant Uniovi](./images/tenant_config.png "Tenant Uniovi")
 
 Tenant State:
 
@@ -87,19 +88,20 @@ $ kubectl port-forward svc/gsdpi-hl 9000:9000
 
 ## Install minio console 
 
-Install the minio CLI to manage your tenant from shell
+Install the minio CLI to manage your tenants from shell
 
 ```sh
 $ brew install minio/stable/mc
 ```
 
-Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned
+Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned. These credentials are not save in secrets, so we must to save the credentials.json download after create the tenant:
 
 ```sh
 mc alias set minikube https://localhost:9000 BsvW9jlpYX8TvD9F HrGdJapKsXbKEcXABWNQ2CO15v3y9MMk --insecure
 Added `minikube` successfully.
 ```
 
+Check the state of the tenant gsdpi
 ```sh
 mc admin info minikube --insecure
 ●  localhost:9000
@@ -117,7 +119,7 @@ Pools:
 
 ## Open Tenant Management Console
 
-Open Tenant Management console to manage buckets. Click in the Minio Management console button showed in the capture bellow
+We can **Open Tenant Management Console** of the gdpi to manage buckets and minio resources of this tenant. Click in the **Minio Management Console button** of the Tenant gsdpi showed in the capture bellow
 
 ![Tenant Management console](./images/tenant_management_console.png "Tenant Management console")
 
