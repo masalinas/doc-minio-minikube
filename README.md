@@ -1,7 +1,7 @@
 # Description
 PoC Minio Object Storage in minikube
 
-## Install minio from help
+## Install minio from help
 
 Install helm official repository
 
@@ -20,7 +20,7 @@ $ helm install \
 $ kubectl get all -n minio-operator
 ```
 
-## Access to minio console
+## Access to minio console
 
 Create a port forward to connect to minio web console manager
 
@@ -34,7 +34,7 @@ Connect to minio console web manager and create a tenant
 http://localhost:9090
 ```
 
-## Create the tenant 
+## Create the tenant 
 
 Tenant minimal configuration
 ![Spark UI](./images/tenant_config.png "Tenan Minio")
@@ -52,7 +52,7 @@ Tenant Metrics
 $ kubectl port-forward svc/gsdpi-hl 9000:9000
 ```
 
-## Install minio console 
+## Install minio console 
 
 Install the minio CLI to manage your tenant from shell
 
