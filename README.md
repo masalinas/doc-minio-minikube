@@ -45,9 +45,9 @@ kubectl create namespace gsdpi
 
 Tenant minimal configuration from Console Web Manager:
 
-Number of Servers: 1
-Drives per Server (Volumes): 4
-Total Size: 10Gb
+- **Number of Servers**: 1
+- **Drives per Server (Volumes)**: 4
+- **Total Size**: 10Gb
 
 ![Spark UI](./images/tenant_config.png "Tenan Minio")
 
