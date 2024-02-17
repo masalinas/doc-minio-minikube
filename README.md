@@ -96,3 +96,13 @@ Pools:
 
 4 drives online, 0 drives offline
 ```
+
+## Open Tenant Management Console
+
+Open Tenant Management console to manage buckets
+
+![Spark UI](./images/tenant_management_console.png "Tenan Management console")
+
+List Tenant Buckets
+
+![Spark UI](./images/tenant_buckets.png "Tenan Buckets")
