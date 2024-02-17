@@ -34,6 +34,24 @@ Connect to minio console web manager and create a tenant
 http://localhost:9090
 ```
 
+# Create the tenant 
+
+Tenant minimal configuration
+![Spark UI](./images/tenant_config.png "Tenan Minio")
+
+Tenant State
+![Spark UI](./images/tenant_state.png "Tenan State")
+
+Tenant Metrics
+![Spark UI](./images/tenant_resume.png "Tenan Metrics")
+
+Tenant Metrics
+![Spark UI](./images/tenan_metrics.png "Tenan Metrics")
+
+```sh
+$ kubectl port-forward svc/gsdpi-hl 9000:9000
+```
+
 # Install minio console 
 
 Install the minio CLI to manage your tenant from shell
