@@ -36,7 +36,7 @@ http://localhost:9090
 
 # Install minio console 
 
-Install the minio CLI to manage your tennat from shell
+Install the minio CLI to manage your tenant from shell
 
 ```sh
 $ brew install minio/stable/mc
@@ -45,6 +45,21 @@ $ brew install minio/stable/mc
 Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned
 
 ```sh
-mc alias set minikube-minio https://localhost:4223 G2KWX8DseVnRtsOe 9MFeIvvxIvsl9xV0YbG08TUe5X9Qi1bs --insecure
-Added `minikube-minio` successfully.
+mc alias set minikube https://localhost:9000 BsvW9jlpYX8TvD9F HrGdJapKsXbKEcXABWNQ2CO15v3y9MMk --insecure
+Added `minikube` successfully.
+```
+
+```sh
+mc admin info minikube --insecure
+●  localhost:9000
+   Uptime: 4 minutes 
+   Version: 2024-02-17T01:15:57Z
+   Network: 1/1 OK 
+   Drives: 4/4 OK 
+   Pool: 1
+
+Pools:
+   1st, Erasure sets: 1, Drives per erasure set: 4
+
+4 drives online, 0 drives offline
 ```
