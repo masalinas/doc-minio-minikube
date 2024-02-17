@@ -1,15 +1,15 @@
 # Description
-PoC Minio Object Storage in minikube
+PoC Minio Object Storage using Minio Operator from minikube
 
 ## Install minio from help
 
-Install helm official repository
+Install helm official repository for operator
 
 ```sh
 $ helm repo add minio-operator https://operator.min.io
 ```
 
-Install helm release in minikube, wait and recover all kubernetes resources created
+Install helm minio operator release in minikube, wait and recover all kubernetes resources created
 
 ```sh
 $ helm install \
