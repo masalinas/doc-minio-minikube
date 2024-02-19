@@ -116,6 +116,11 @@ Pools:
 
 4 drives online, 0 drives offline
 ```
+## List files in a bucket
+
+```sh
+$ mc ls minikube --recursive --insecure
+```
 
 ## Open Tenant Management Console
 
