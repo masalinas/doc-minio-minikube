@@ -30,6 +30,34 @@ $ helm install \
   --create-namespace \
   operator minio-operator/operator
 
+helm install \
+>   --namespace minio-operator \
+>   --create-namespace \
+>   operator minio-operator/operator
+NAME: operator
+LAST DEPLOYED: Mon Feb 19 13:59:50 2024
+NAMESPACE: minio-operator
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+NOTES:
+1. Get the JWT for logging in to the console:
+kubectl apply -f - <<EOF
+apiVersion: v1
+kind: Secret
+metadata:
+  name: console-sa-secret
+  namespace: minio-operator
+  annotations:
+    kubernetes.io/service-account.name: console-sa
+type: kubernetes.io/service-account-token
+EOF
+kubectl -n minio-operator get secret console-sa-secret -o jsonpath="{.data.token}" | base64 --decode
+
+2. Get the Operator Console URL by running these commands:
+  kubectl --namespace minio-operator port-forward svc/console 9090:9090
+  echo "Visit the Operator Console at http://127.0.0.1:9090
+
 $ kubectl get all -n minio-operator
 ```
 
