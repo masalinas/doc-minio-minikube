@@ -103,7 +103,7 @@ chmod +x $HOME/minio-binaries/mc
 mv $HOME/minio-binaries/mc /user/local/bin
 ```
 
-## Somes tests with mc CLI
+## Somes tests with minio console CLI
 
 Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned. These credentials are not save in secrets, so we must to save the credentials.json download after create the tenant:
 
