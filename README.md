@@ -86,13 +86,24 @@ Tenant Metrics:
 $ kubectl port-forward svc/gsdpi-hl 9000:9000
 ```
 
-## Install minio console 
+## Install minio console in Mac
 
 Install the minio CLI to manage your tenants from shell
 
 ```sh
 $ brew install minio/stable/mc
 ```
+
+## Install minio console in Linux
+```sh
+curl https://dl.min.io/client/mc/release/linux-amd64/mc --create-dirs -o $HOME/minio-binaries/mc
+
+chmod +x $HOME/minio-binaries/mc
+
+mv $HOME/minio-binaries/mc /user/local/bin
+```
+
+## Somes tests with mc CLI
 
 Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned. These credentials are not save in secrets, so we must to save the credentials.json download after create the tenant:
 
