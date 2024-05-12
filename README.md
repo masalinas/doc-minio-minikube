@@ -133,7 +133,7 @@ mv $HOME/minio-binaries/mc /user/local/bin
 
 ## Somes tests with minio console CLI
 
-Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, becaue the TLS created by minio is autosigned. These credentials are not save in secrets, so we must to save the credentials.json download after create the tenant:
+Using the **access_token** and **secret_key** from tenant create the alias in unsecure mode, because the TLS created by minio is autosigned. These credentials are not save in secrets, so we must to save the credentials.json download after create the tenant:
 
 ```sh
 mc alias set minikube https://localhost:9000 BsvW9jlpYX8TvD9F HrGdJapKsXbKEcXABWNQ2CO15v3y9MMk --insecure
